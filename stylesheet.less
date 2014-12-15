@@ -921,6 +921,13 @@ hr.line.align-right {
 
 .blog-post-sharing {
     margin-top: 20px;
+    button {
+        @media @mobile {
+            padding: 10px 40px;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+    }
 }
 
 /* ===============================
@@ -1563,6 +1570,8 @@ input[type="search"] {
     text-decoration: none;
     letter-spacing: 1px;
 	cursor: pointer;
+    height: 40px;
+    vertical-align: top;
     &:hover {
     	background-color: @font-swatch7-background-color-hover;
     }
@@ -1727,8 +1736,13 @@ input[type="search"] {
 		margin: 0;
 		position: absolute;
 		right: 0;
-		top: 0;
+		bottom: 0;
         height: 40px;
+        @media @mobile {
+            width: 100%;
+            position: relative;
+            margin-top: 15px;
+        }
 	}
 }
 
