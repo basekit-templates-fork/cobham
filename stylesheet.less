@@ -186,7 +186,7 @@ button.btn,
 .main {
     width: 90%;
     margin: 0 5%;
-    @media only screen and (min-width: 1500px) { 
+    @media only screen and (min-width: 1500px) {
         width: 1100px;
         margin: 0 auto;
         padding: 0;
@@ -281,7 +281,7 @@ button.btn,
             }
         }
 		.selected {
-			a {
+			a .text {
                 color: @font-swatch6-color-hover;
                 text-decoration: underline;
 			}
@@ -342,6 +342,9 @@ button.btn,
                     padding-top: 15px;
                     padding-bottom: 15px;
                     display: inline-block;
+                    &:hover {
+                        text-decoration: underline;
+                    }
                 }
                 a {
                     display: block;
@@ -361,8 +364,8 @@ button.btn,
                     }
                 }
                 &.folder {
-                    /* Folder dropdown arrow BG style goes Here */  
-                    margin-right: 20px;            
+                    /* Folder dropdown arrow BG style goes Here */
+                    margin-right: 0;
                     cursor: pointer;
                     background-image: none;
                     .text {
@@ -376,9 +379,6 @@ button.btn,
                         position: relative;
                         padding-right: 1px;
                         padding-left: 1px;
-                        @media @tablet {
-                            
-                        }
                         &:after {
                             content: "\25BC";
                             font-size: 5px;
@@ -388,11 +388,14 @@ button.btn,
                             z-index: 9999999;
                             right: 0;
                             margin-top: -12px;
-                            color: @color-swatch6;
+                            color: @font-swatch6-color;
                             @media @tablet {
                                 font-size: 10px;
                                 padding-right: 10px;
                             }
+                        }
+                        &:hover:after {
+                            color: @font-swatch6-color-hover;
                         }
                         &:hover {
                             color: @font-swatch6-color-hover;
@@ -467,7 +470,7 @@ button.btn,
 .feature-slideshow .widget.responsiveslideshow .slideshow-image-list {
     height: 410px;
     @media @mobile {
-        height: 350px;
+        max-height: 350px;
     }
 }
 
@@ -620,7 +623,7 @@ button.btn,
 	.feature-slideshow .widget.responsiveslideshow .content-wrapper {
 	    padding: 0;
 	}
-	
+
 	.feature-slideshow .widget.responsiveslideshow .title {
 	    display: inline-block;
 	    padding:10px 15px 5px 0;
@@ -631,7 +634,7 @@ button.btn,
 	    color: @font-swatch8-color;
 	    letter-spacing: @font-swatch8-letter-spacing;
 	}
-	
+
 	.feature-slideshow .widget.responsiveslideshow .description {
 	    display: block;
 	    padding: 0 15px 15px 0;
@@ -642,7 +645,7 @@ button.btn,
 	    color: @font-swatch9-color;
 	    letter-spacing: @font-swatch9-letter-spacing;
 	}
-	
+
 	.feature-slideshow .widget.responsiveslideshow .image-wrapper {
 	    height: 82%;
 	}
@@ -671,6 +674,9 @@ button.btn,
     border-radius: 4px;
     cursor: pointer;
     display: inline-block;
+    .more, .less {
+        color: @font-swatch7-color;
+    }
 }
 
 .widget.content span.expand:hover,
@@ -904,6 +910,7 @@ hr.line.align-right {
 }
 
 .blogpost {
+    .clearfix;
 	.blog-post-feature-image-wrap {
 		float: right;
 		margin-right: 0;
@@ -928,6 +935,10 @@ hr.line.align-right {
             margin-bottom: 20px;
         }
     }
+}
+
+.blogpostlist {
+    .clearfix;
 }
 
 /* ===============================
@@ -1455,7 +1466,6 @@ input[type="search"] {
     font-size: @font-swatch5-font-size;
     color: @font-swatch5-color;
     text-indent: 8px;
-    margin-top: 6px;
     margin-bottom: 20px;
     padding: 0;
 }
@@ -1465,25 +1475,6 @@ input[type="search"] {
     box-shadow: 0 0 5px @color-swatch3;
 }
 
-.widget.profile fieldset button.btn,
-.widget.signupform fieldset button.btn,
-.blog-search-submit-button {
-    padding: 7px 20px 8px;
-    margin: 0;
-    border: none;
-    font-family: @font-swatch7-font-family;
-    font-size: @font-swatch7-font-size;
-    font-weight:@font-swatch7-font-weight;
-    background-color: @font-swatch7-background-color;
-    color: @font-swatch7-color;
-    text-decoration: none;
-    letter-spacing: 1px;
-}
-
-.widget.profile fieldset button.btn:hover {
-    background-color: @font-swatch7-background-color-hover;
-    cursor: pointer;
-}
 
 /* ===============================
    LINKED IN
@@ -1529,9 +1520,11 @@ input[type="search"] {
     padding: 0;
 }
 
-.widget.signupform fieldset label, label {
+.widget.signupform fieldset label,
+.blog-search-form label {
     width: 100%;
     float: left;
+    margin-bottom: 10px;
     font-family:@font-swatch5-font-family;
     font-size:@font-swatch5-font-size;
     font-weight:@font-swatch5-font-weight;
@@ -1540,7 +1533,9 @@ input[type="search"] {
     letter-spacing: @font-swatch5-letter-spacing;
 }
 
-.widget.signupform fieldset input, input[type="search"] {
+.widget.signupform fieldset input,
+.widget.profile form fieldset input,
+input[type="search"] {
     background-color: #ffffff;
     border: 1px solid lighten(@color-swatch5, 68%);
     font-family: @font-swatch5-font-family;
@@ -1557,29 +1552,34 @@ input[type="search"] {
     box-shadow: 0 0 5px @color-swatch3;
 }
 
-.widget.signupform fieldset button.btn, .blog-search-submit-button {
-	line-height: 25px;
+.widget.profile fieldset button.btn,
+.widget.signupform fieldset button.btn,
+.blog-search-submit-button {
+    height: 40px;
+    vertical-align: top;
+    padding: 7px 20px 8px;
     margin: 0;
     border: none;
-    background-color: lighten(@color-swatch5,30%);
     font-family: @font-swatch7-font-family;
     font-size: @font-swatch7-font-size;
     font-weight:@font-swatch7-font-weight;
     background-color: @font-swatch7-background-color;
     color: @font-swatch7-color;
+    line-height: 25px;
     text-decoration: none;
     letter-spacing: 1px;
-	cursor: pointer;
-    height: 40px;
-    vertical-align: top;
+    cursor: pointer;
     &:hover {
-    	background-color: @font-swatch7-background-color-hover;
+        background-color: @font-swatch7-background-color-hover;
     }
 }
 
-.widget.signupform fieldset button.btn:hover {
-    background-color: @font-swatch7-background-color-hover;
-    cursor: pointer;
+.widget.signupform fieldset button.btn,
+.widget.profile fieldset button.btn {
+    margin-left: -5px;
+    @media @mobile {
+        margin-left: 0;
+    }
 }
 
 /* ===============================
@@ -1849,31 +1849,31 @@ a.btn.ecom-product-go-to-checkout-btn {
 	.main {
 	    padding: 1em 0;
 	}
-	
+
 	.bk-footer {
 	  min-height: auto;
 	  padding: 3% 5%;
 	}
-	
+
 	.widget.profile .twitter {
 	  width: 50%;
 	}
-	
+
 	/* FEATURE */
-	
+
 	.feature-slideshow {
 	  margin: 0 0 50px;
 	}
-	
+
 	 /* GALLERY */
-	
+
 	.widget.gallery li span.inner .title, .widget.gallery li span.inner .description {
 		font-size:bkscale(@font-swatch5-font-size,0.9);
 		line-height:bkscale(@font-swatch5-line-height,0.9);
 	}
-	
+
 	/* SLIDESHOW */
-	
+
 	.widget.responsiveslideshow .slideshow-image-list,
 	.widget.responsiveslideshow .slideshow-widget {
 	    height:400px;
@@ -1956,7 +1956,7 @@ select {
 
     .feature-slideshow {
       margin-top: 10px;
-      height: 350px;
+      max-height: 350px;
     }
 
     .feature-slideshow .widget.responsiveslideshow .slideshow-widget {
@@ -2046,7 +2046,9 @@ select {
       display:none;
     }
 
-    .widget.responsiveslideshow .slideshow-image-list, .widget.responsiveslideshow .slideshow-widget {
+    .widget.responsiveslideshow .slideshow-widget,
+    .widget.responsiveslideshow .slideshow-image-list,
+    .widget.responsiveslideshow .slideshow-image-list .slideshow-image-item {
         height: 200px;
     }
 
@@ -2071,7 +2073,7 @@ select {
       line-height:@font-swatch5-line-height;
       color: @font-swatch4-color;
     }
-    
+
      /* ECOMMERCE */
 	.productlist-display-form {
 		select, label {
@@ -2081,7 +2083,7 @@ select {
 			bottom: 0;
 		}
 	}
-	
+
 	/* SINGLE FIELDS */
 	.productlist-display-form input[type=search],
 	.widget.profile form fieldset input,
@@ -2090,7 +2092,7 @@ select {
         border: 1px solid lighten(@color-swatch5, 68%);
 		width: 100%;
 	}
-	
+
 	// Basket Summary
 	.basket-summary-items-table {
 		td, .basket-summary-subtotal {
