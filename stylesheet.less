@@ -148,8 +148,8 @@ button.btn,
 
 
 .logo-nav {
-    background: @color-swatch7;
     position: fixed;
+    float: left;
     overflow-y: scroll;
     overflow-x: hidden;
     z-index: 9999;
@@ -157,7 +157,7 @@ button.btn,
     height: 100%;
     padding: 2em;
     text-align: left;
-    float: left;
+    background: @color-swatch7;
     &::-webkit-scrollbar {
     	width: 0 !important
     }
@@ -166,6 +166,7 @@ button.btn,
     }
     @media @tablet {
         width: 100%;
+        height: auto;
         padding: 0;
         position: relative;
         overflow: visible;
@@ -180,19 +181,24 @@ button.btn,
     }
     @media @tablet {
         padding-left:0;
+        padding-top: 30px;
+    }
+    @media @mobile {
+        padding-top: 20px;
     }
 }
 
 .main {
-    width: 90%;
-    margin: 0 5%;
+    width: 100%;
+    margin: 0 auto;
     @media only screen and (min-width: 1500px) {
         width: 1100px;
         margin: 0 auto;
         padding: 0;
     }
     @media @tablet {
-        padding: 20px 0 0;
+        width: 90%;
+        margin: 0 5%;
     }
     .widget {
         clear: both;
@@ -238,11 +244,18 @@ button.btn,
 
 .bk-footer {
     background-color: @color-swatch2;
-    padding: 20px 0 20px 300px;
-    margin-top: 3em;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-right: 0;
+    padding-left: 25%;
+    @media only screen and (min-width: 1290px) {
+        padding-left: 300px;
+    }
+    @media @tablet {
+        padding-left:0;
+    }
     color: @color-swatch6;
     text-align: left;
-    min-height: 250px;
 }
 
 .bk-footer h1,
@@ -461,7 +474,7 @@ button.btn,
    =============================== */
 
 .feature-slideshow {
-  margin: 50px 0;
+  margin: 0 0 50px;
   .widget.responsiveslideshow .slideshow-image-list.crop span.inner.square, .widget.responsiveslideshow .slideshow-image-list.crop span.inner.portrait, .widget.responsiveslideshow .slideshow-image-list.crop span.inner.landscape {
     background-image: none !important;
   }
@@ -506,7 +519,10 @@ button.btn,
     padding: 30px 30px 30px 0;
     @media only screen and (max-width : 768px) and (min-width : 480px) {
         top: 56px;
-        width: 50%;
+        width: 58%;
+    }
+    @media @mobile {
+        top: 30px;
     }
 }
 
@@ -649,6 +665,16 @@ button.btn,
 	.feature-slideshow .widget.responsiveslideshow .image-wrapper {
 	    height: 82%;
 	}
+}
+
+@media @mobile {
+    .feature-slideshow {
+        .widget.responsiveslideshow .slideshow-widget,
+        .widget.responsiveslideshow .slideshow-image-list,
+        .widget.responsiveslideshow .slideshow-image-list .slideshow-image-item {
+            height: auto;
+        }
+    }
 }
 
 
@@ -1025,6 +1051,9 @@ hr.line.align-right {
     margin-top: 8px;
 	padding-right: 5%;
 	width: 15%;
+    img {
+        width: 100%;
+    }
 }
 
 .twitter-content {
@@ -1501,7 +1530,8 @@ input[type="search"] {
    =============================== */
 
 .widget.map {
-  border: 1px solid @color-swatch2;
+    border: 1px solid @color-swatch2;
+    margin: 20px 0 30px;
 }
 
 /* ===============================
@@ -1852,7 +1882,10 @@ a.btn.ecom-product-go-to-checkout-btn {
 
 	.bk-footer {
 	  min-height: auto;
-	  padding: 3% 5%;
+	  padding-top: 23px;
+      padding-bottom: 23px;
+      padding-left: 5%;
+      padding-right: 5%;
 	}
 
 	.widget.profile .twitter {
@@ -2148,4 +2181,31 @@ select {
 
 .clearfix {
     *zoom: 1
+}
+
+
+// ------------------------------------------
+// sticky footer
+// ------------------------------------------
+
+
+.flex-container {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    min-height: 100vh;
+    width: 100%;
+    flex-direction: column;
+     -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+}
+.flex-container .zone-area {
+    flex: 1;
+    -webkit-box-flex: 1;
+    -moz-box-flex: 1;
+    -webkit-flex: 1 1 auto;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
 }
