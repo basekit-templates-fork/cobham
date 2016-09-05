@@ -1,70 +1,107 @@
 {
-	"name":"Cobham",
-	"thumbnail":"cobham.png",
-	"screenshot":"cobham.png",
-	"templateType":"standard",
-    "pageTypes":["home"],
-    "tags": {
-    "en": ["minimal", "clean", "modern", "slideshow", "mortgage", "website", "solicitor", "elegant", "professional", "unique", "service"],
-    "es": ["minimalista", "limpio", "moderno", "slideshow", "estudio", "website", "creativo", "elegante", "profesional", "unico", "comunicacion"],
-    "br": ["minimalista", "limpo", "moderno", "slideshow", "estúdio", "website", "criativo", "elegante", "profissional", "único", "mídia"]
-    },
-    "images":[
-    "images/gallery/1.jpg",
-    "images/gallery/2.jpg",
-    "images/gallery/3.jpg"
+    "name": "Cobham",
+    "thumbnail": "cobham.png",
+    "screenshot": "cobham-screenshot.jpg",
+    "templateType": "standard",
+    "pageTypes": [
+        "home"
     ],
-	"colorSwatches":
-    {
+    "tags": {
+        "en": [
+            "minimal",
+            "clean",
+            "modern",
+            "slideshow",
+            "mortgage",
+            "website",
+            "solicitor",
+            "elegant",
+            "professional",
+            "unique",
+            "service"
+        ],
+        "es": [
+            "minimalista",
+            "limpio",
+            "moderno",
+            "slideshow",
+            "estudio",
+            "website",
+            "creativo",
+            "elegante",
+            "profesional",
+            "unico",
+            "comunicacion"
+        ],
+        "br": [
+            "minimalista",
+            "limpo",
+            "moderno",
+            "slideshow",
+            "est\u00fadio",
+            "website",
+            "criativo",
+            "elegante",
+            "profissional",
+            "\u00fanico",
+            "m\u00eddia"
+        ]
+    },
+    "images": [
+        "images/gallery/1.jpg",
+        "images/gallery/2.jpg",
+        "images/gallery/3.jpg"
+    ],
+    "colorSwatches": {
         "Swatch 1": {
-            "color1":"#ffffff",
-            "color2":"#e2e2e2",
-            "color3":"#cb2c32",
-            "color4":"#333333",
-            "color5":"#333333",
-            "color6":"#a5a7af",
-            "color7":"#3a3d49"
+            "color1": "#ffffff",
+            "color2": "#e2e2e2",
+            "color3": "#cb2c32",
+            "color4": "#333333",
+            "color5": "#333333",
+            "color6": "#a5a7af",
+            "color7": "#3a3d49"
         },
         "Swatch 2": {
-            "color1":"#ffffff",
-            "color2":"#e1e1e1",
-            "color3":"#bdb76b",
-            "color4":"#2d2d2d",
-            "color5":"#333333",
-            "color6":"#a5a5a5",
-            "color7":"#DCDCDC"
+            "color1": "#ffffff",
+            "color2": "#e1e1e1",
+            "color3": "#bdb76b",
+            "color4": "#2d2d2d",
+            "color5": "#333333",
+            "color6": "#a5a5a5",
+            "color7": "#DCDCDC"
         },
         "Swatch 3": {
-            "color1":"#ffffff",
-            "color2":"#e2e2e2",
-            "color3":"#B8860B",
-            "color4":"#2d2d2d",
-            "color5":"#333333",
-            "color6":"#a0aaaa",
-            "color7":"#2F4F4F"
+            "color1": "#ffffff",
+            "color2": "#e2e2e2",
+            "color3": "#B8860B",
+            "color4": "#2d2d2d",
+            "color5": "#333333",
+            "color6": "#a0aaaa",
+            "color7": "#2F4F4F"
         },
         "Swatch 4": {
-            "color1":"#ffffff",
-            "color2":"#e2e2e2",
-            "color3":"#d2b48c",
-            "color4":"#333333",
-            "color5":"#333333",
-            "color6":"#bec9d3",
-            "color7":"#778899"
+            "color1": "#ffffff",
+            "color2": "#e2e2e2",
+            "color3": "#d2b48c",
+            "color4": "#333333",
+            "color5": "#333333",
+            "color6": "#bec9d3",
+            "color7": "#778899"
         },
         "Swatch 5": {
-            "color1":"#ffffff",
-            "color2":"#e2e2e2",
-            "color3":"#00bfff",
-            "color4":"#333333",
-            "color5":"#333333",
-            "color6":"#a5a7af",
-            "color7":"#373737"
+            "color1": "#ffffff",
+            "color2": "#e2e2e2",
+            "color3": "#00bfff",
+            "color4": "#333333",
+            "color5": "#333333",
+            "color6": "#a5a7af",
+            "color7": "#373737"
         }
     },
     "fontSwatch": {
-       "title": "Merriweather / Open Sans",
-            "font1": {
+        "title": "Merriweather / Open Sans",
+        "font1": {
             "font-family": "\"Merriweather\", Georgia, serif",
             "font-size": "30px",
             "font-weight": "400",
